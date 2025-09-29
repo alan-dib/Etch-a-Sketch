@@ -44,13 +44,11 @@ body, html{
 .right-border{
     background-color: red;
     width: 50px;
-
 }
 .bottom-border{    
     background-color: red;
     height: 60px;
     width: 100%;
-
 }
 
 .sides-border{
