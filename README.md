@@ -13,46 +13,46 @@ A browser-based recreation of the classic Etch-a-Sketch toy. This project allows
 
 **Resize functionality**: Resize the grid up to 100 x 100.
 
-**Color modes**: 
-• Classic black-and-white mode.
-• Random RGB mode 
+**Color modes** <br>
+• Classic black-and-white mode. <br>
+• Random RGB mode <br>
 • Progressive darkening effect
 
 **Clear button**: Resets grid back to 60x60 to start fresh.
 
 
-## Installation
+## Installation 
 
-1. Clone this repo
-2. Open index.html in your browser
+1. Clone this repo 
+2. Open index.html in your browser 
 3. DONE!
 
-## How to use
+## How to use <br>
 
-•  Load the page to see default 16x16 grid
-•  Hover your mouse over the cells to draw
-•  Enter a valid number to resize the grid between 16x16 and 100x100
-•  Use clear button to restart your drawing
-•  Switch modes by pressing the buttons 
+• Load the page to see default 16x16 grid <br>
+• Hover your mouse over the cells to draw <br>
+• Enter a valid number to resize the grid between 16x16 and 100x100 <br>
+• Use clear button to restart your drawing <br>
+• Switch modes by pressing the buttons 
 
 ## Technologies used
 
-• HTML5: Structure the grid container and UI elements
-• CSS3: Flexbox layout for the drawing board; hover effects and styling
+• HTML5: Structure the grid container and UI elements <br>
+• CSS3: Flexbox layout for the drawing board; hover effects and styling <br>
 • JAVASCRIPT: Dynamic grid generation and event listeners for mouse interactions
 
 ## Learning outcomes
 
-**This project helped solidify:**
+**This project helped solidify:** <br>
 
-•  Creating and manipulation DOM elements
-•  Handling user input and events (e.g., mouseover)
-•  CSS Flexbox
-•  Basic algorithm for grid resizing and color manipulation
+• Creating and manipulation DOM elements <br>
+• Handling user input and events (e.g., mouseover) <br>
+• CSS Flexbox <br>
+• Basic algorithm for grid resizing and color manipulation
 
-## Potentital improvements 
-
-• Add touch/Drag support for mobile devices
+## Potentital improvements  <br>
+ 
+• Add touch/Drag support for mobile devices <br>
 • Implement save/export functionality (e.g., download as PNG). 
 
 ## Contributing
@@ -61,7 +61,7 @@ Feel free to fork the repo, create a branch and submit a pull request! Issues an
 
 ## License 
 
-Mit License – Free to use and modify
+Mit License – Free to use and modify <br>
 
 
 *Created by Alan Vitor on sep 29, 2025*
