@@ -5,19 +5,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Etch a Sketch</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gluten:wght@100..900&display=swap" rel="stylesheet">
 </head>
 <body>
     <div id="container">
         <div class="top-border">
-            <section>
             <span>magic</span>
-                <h1>Etch a Sketch</h1>
-                <span>screen</span>
-            </section>
+            <h1>Etch a Sketch</h1>
+            <span>screen</span>
         </div>
-        <div class="left-border"></div>
-        <div class="right-border"></div>
-        <div class="bottom-border"></div>
+        <div class="sides-border">
+            <div class="left-border"></div>
+            <div class="right-border"></div>
+        </div>
+        <div class="bottom-border">
+            <div class="btn">
+                <button></button>
+                <button></button>
+            </div>
+        </div>
     </div>
     <script src="sketch.js"></script>
 </body>
