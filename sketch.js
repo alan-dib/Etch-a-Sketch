@@ -21,12 +21,20 @@ function createGridSize(size){
         
         grid.addEventListener('mouseenter', () =>{
             if(isDrawing){
-                let count = parseInt(grid.dataset.hoverCount) || 0;
-                if(count < 10){
-                    count += 1;
-                    grid.dataset.hoverCount = count;
-                    const opacity = count * 0.1;
-                    grid.style.backgroundColor = `rgba(0, 0, 0, ${opacity})`;               
+                if(currentMode === 'normal'){
+                    let count = parseInt(grid.dataset.hoverCount) || 0;
+                    if(count < 10){
+                        count += 1;
+                        grid.dataset.hoverCount = count;
+                        const opacity = count * 0.1;
+                        grid.style.backgroundColor = `rgba(0, 0, 0, ${opacity})`; 
+                    }
+                }else if(currentMode === 'rgb'){
+                    const r = Math.floor(Math.random() * 256);
+                    const g = Math.floor(Math.random() * 256);
+                    const b = Math.floor(Math.random() * 256);
+                    grid.style.backgroundColor = `rgb(${r}, ${g}, ${b})`;
+
                 }
             }
         });
@@ -61,4 +69,10 @@ setButton.addEventListener('click', () => {
     }
 });
 
+let currentMode = 'normal';
+const modeSelect = document.getElementById('modes')
+
+modes.addEventListener('change', (e) => {
+    currentMode = e.target.value;
+})
 createGridSize(20);
