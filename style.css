@@ -113,5 +113,10 @@ button{
     background-color: lightgrey;
     text-align: center;
     cursor: pointer;
-    
+}
+
+#userGrid{
+    display: flex;
+    width: fit-content;
+    color: black;
 }
