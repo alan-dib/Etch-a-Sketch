@@ -75,4 +75,4 @@ const modeSelect = document.getElementById('modes')
 modes.addEventListener('change', (e) => {
     currentMode = e.target.value;
 })
-createGridSize(20);
+createGridSize(16);
