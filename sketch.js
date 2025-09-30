@@ -1,46 +1,64 @@
 const gridContainer = document.getElementById('etch-grid');
 let isDrawing = false;
-const elements = [];
-// generate 60 divs
-for (let i = 0; i < 60; i++){
-    const grid = document.createElement('div')
-    grid.classList.add('gridDefault');
-    gridContainer.appendChild(grid)
-}; 
 
-const cells = document.querySelectorAll('.gridDefault');
-cells.forEach(cell => {
-    cell.dataset.hoverCount = 0;
-    cell.addEventListener('mouseenter', () => {
-        if (isDrawing){
-            let count = parseInt(cell.dataset.hoverCount) || 0;
-            if(count < 10){
-                count += 1;
-                cell.dataset.hoverCount = count;
-                const opacity = count * 0.1;
-                cell.style.backgroundColor = `rgba(0, 0, 0, ${opacity})`;
+function createGridSize(size){
+    if(!Number.isInteger(size) || size < 1 || size > 100){
+        alert(size > 100 ? 'Type a number between 1 and 100' : 'Error, type a valid integer number')
+        return;
+    }
+    gridContainer.innerHTML = '';
+
+    const totalCells = size * size;
+    const cellSize = `calc(100% / ${size})`;
+
+    for(let i = 0; i < totalCells; i++){
+        const grid = document.createElement('div')
+        grid.classList.add('gridDefault');
+        grid.style.flex = `0 0 ${cellSize}`;
+        grid.style.height = cellSize;
+
+        grid.dataset.hoverCount = 0;
+        
+        grid.addEventListener('mouseenter', () =>{
+            if(isDrawing){
+                let count = parseInt(grid.dataset.hoverCount) || 0;
+                if(count < 10){
+                    count += 1;
+                    grid.dataset.hoverCount = count;
+                    const opacity = count * 0.1;
+                    grid.style.backgroundColor = `rgba(0, 0, 0, ${opacity})`;               
+                }
             }
-        }
-    })
-})
-
-gridContainer.addEventListener('mousedown', () =>{
-    isDrawing = true;
-})
-gridContainer.addEventListener('mouseup', () =>{
-    isDrawing = false;
-})
-gridContainer.addEventListener('mouseleave', () =>{
-    isDrawing = false;
-})
-
-
+        });
+        gridContainer.appendChild(grid);
+    }
+}
+    
+gridContainer.addEventListener('mousedown', () =>{isDrawing = true; });
+gridContainer.addEventListener('mouseup', () =>{isDrawing = false; });
+gridContainer.addEventListener('mouseleave', () =>{isDrawing = false; });
 
 const buttons = document.querySelectorAll('button');
-buttons.forEach(button => {
-    button.addEventListener('click', () => {
-        cells.forEach(cell => {
-            cell.style.backgroundColor = 'lightgrey'
-        })
-    })   
-})
+const clearButton = buttons[0];
+const setButton = buttons[1];
+const userInput = document.getElementById('userGrid');
+
+clearButton.addEventListener('click', () => {
+    const cells = document.querySelectorAll('.gridDefault');
+    cells.forEach(cell => {
+        cell.style.backgroundColor = 'lightgrey';
+        cell.dataset.hoverCount = 0;
+    });
+});
+
+setButton.addEventListener('click', () => {
+    const value = userInput.value.trim();
+    const userGrid = Number(value);
+    if(!Number.isNaN(userGrid)){
+        createGridSize(userGrid);
+    }else{
+        alert('Invalid number! Please enter a valid number')
+    }
+});
+
+createGridSize(20);
