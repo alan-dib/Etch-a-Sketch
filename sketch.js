@@ -2,7 +2,7 @@ const gridContainer = document.getElementById('etch-grid');
 let isDrawing = false;
 
 function createGridSize(size){
-    if(!Number.isInteger(size) || size < 1 || size > 100){
+    if (!Number.isInteger(size) || size < 1 || size > 100){
         alert(size > 100 ? 'Type a number between 1 and 100' : 'Error, type a valid integer number')
         return;
     }
