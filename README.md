@@ -57,7 +57,7 @@ A browser-based recreation of the classic Etch-a-Sketch toy. This project allows
 
 ## Contributing
 
-Feel free to fork the repo, create a branch and submit a pull request! Issues and sugestions welcome
+Feel free to fork the repo, create a branch and submit a pull request! Issues and suggestions welcome
 
 ## License 
 
